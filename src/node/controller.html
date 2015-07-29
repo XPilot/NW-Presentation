@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Presentation remote</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+		<style type="text/css">
+			.wrapper {
+				width: 360px;
+				margin: 0 auto;
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -180px;
+				margin-top: -125px;
+			}
+
+			.content {
+				position: relative;
+				width: 100%;
+			}
+
+			.content .btn {
+				width: 100px;
+			}
+
+			.left {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -17px;
+			}
+
+			.right {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -17px;
+			}
+
+			.top,
+			.bottom {
+				display: block;
+				margin: 20px auto;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="content		`">
+				<button type="button" class="top btn btn-primary">Up</button>
+				<button type="button" class="bottom btn btn-primary">Down</button>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(function(){
+				$('button').on('click', function(ev) {
+					var dir = $(ev.currentTarget).text().toLowerCase();
+					$.get('/' + dir);
+				});
+			});
+		</script>
+	</body>
+</html>
