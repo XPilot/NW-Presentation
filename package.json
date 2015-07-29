@@ -1,0 +1,43 @@
+{
+  "name": "BringTheWebHome",
+  "version": "1.0.0",
+  "description": "Presentation highlighting Node Webkit features",
+  "main": "src/app.html",
+  "window": {
+    "width": 1600,
+    "height": 1200,
+    "fullscreen": true,
+    "resizable": true,
+    "show_in_taskbar": true,
+    "toolbar": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "node_modules/.bin/node motd/show_motd",
+    "postinstall": "node_modules/.bin/nw && echo \"Project installed ok! N-Joy the presentation\"",
+    "start": "node_modules/.bin/nw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XPilot/NW-Presentation.git"
+  },
+  "author": "@XPilot",
+  "contributors": [
+    {
+      "name": "Radu Paraschiv",
+      "url": "http://radu-paraschiv.info"
+    }
+  ],
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/XPilot/NW-Presentation/issues"
+  },
+  "homepage": "https://github.com/XPilot/NW-Presentation/",
+  "devDependencies": {
+    "ip": "^0.3.3",
+    "node-webkit-builder": "git://github.com/mfkp/node-webkit-builder",
+    "nw": "^0.12.2",
+    "qr-image": "^3.1.0",
+    "reveal.js": "^3.1.x"
+  }
+}
