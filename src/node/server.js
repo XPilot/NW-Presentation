@@ -1,6 +1,7 @@
 var http = require('http');
 var htmlPackage = {};
 var fs = require('fs');
+var wifi = require('wifi-name');
 
 var ip =require('ip');
 
@@ -70,5 +71,15 @@ module.exports = {
 	
 	getIP: function() {
 		return ip.address();
+	},
+
+	getSSID: function(domElement){
+		wifi(function(err, name) {
+			if(err) {
+				domElement.innerHTML = 'Unable to get WIFI address';
+			}
+
+			domElement.innerHTML = name;
+		});	
 	}
 }
