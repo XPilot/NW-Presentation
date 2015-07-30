@@ -6,6 +6,13 @@ var qr = require('qr-image');
 var gui = require('nw.gui');
 var win = gui.Window.get();
 
+gui.Screen.Init();
+
+var currentScreen = 0;
+var screens = gui.Screen.screens;
+
+win.setVisibleOnAllWorkspaces(true);
+
 // define a global presentation controller
 var presentationController = function(dir) {
 	if(Reveal) {
@@ -29,6 +36,9 @@ win.on('document-end', function(){
 	var imgPlaceholder = document.getElementById('qrImage');
 	imgPlaceholder.src = 'data:image/png;base64,' + pngBase64;
 
+	var ssidPlaceholder = document.getElementById('wifiName');
+	server.getSSID(ssidPlaceholder);
+
 	Reveal.initialize({
 		width: 1280,
 		height: 720,
@@ -51,6 +61,15 @@ win.on('document-end', function(){
 	});
 
 	window.addEventListener('keydown', function(ev){
+		if(ev.keyCode === 186) {
+			//win.leaveFullscreen();
+			win.moveTo(screens[0].bounds.x, screens[0].bounds.y);
+		}
+		else if(ev.keyCode === 222) {
+			//win.leaveFullscreen();
+			win.moveTo(screens[1].bounds.x, screens[1].bounds.y);
+		}
+
 		if(ev.keyCode === 27) {
 			win.close();
 		};
