@@ -6,7 +6,6 @@
   "window": {
     "width": 1600,
     "height": 1200,
-    "fullscreen": true,
     "resizable": true,
     "show_in_taskbar": true,
     "toolbar": false
@@ -38,6 +37,7 @@
     "node-webkit-builder": "git://github.com/mfkp/node-webkit-builder",
     "nw": "^0.12.2",
     "qr-image": "^3.1.0",
-    "reveal.js": "^3.1.x"
+    "reveal.js": "^3.1.x",
+    "wifi-name": "^1.0.9"
   }
 }
