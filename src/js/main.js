@@ -49,4 +49,12 @@ win.on('document-end', function(){
 		loop: false,
 		rtl: false
 	});
+
+	window.addEventListener('keydown', function(ev){
+		if(ev.keyCode === 27) {
+			win.close();
+		};
+	}, true);
 });  
+
+
